@@ -58,10 +58,9 @@ const EventForm: React.FC<EventFormProps> = ({ existingEvent }) => {
       organisation: '',
       subEvents: 0,
     });
-    router.push('/events');
+    router.push('/');
   };
 
-  console.log(errors, "SDflkdfjl")
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='p-4'>
       <div className='flex  flex-col gap-4'>
@@ -111,7 +110,7 @@ const EventForm: React.FC<EventFormProps> = ({ existingEvent }) => {
                   value={field.value}
                   className='w-full'
                   onChange={(date) => field.onChange(date)}
-                  renderInput={(params) => (
+                  renderInput={(params:any) => (
                     <TextField
                       {...params}
                       error={!!errors.startDate}
@@ -134,7 +133,7 @@ const EventForm: React.FC<EventFormProps> = ({ existingEvent }) => {
                   className='w-full'
                   disabled={!startDate}
                   onChange={(date) => field.onChange(date)}
-                  renderInput={(params) => (
+                  renderInput={(params:any) => (
                     <TextField
                       {...params}
                       error={!!errors.endDate}
